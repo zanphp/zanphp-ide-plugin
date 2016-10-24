@@ -1,5 +1,15 @@
 # Zan Plugin Beta
 
+![sid自动补全](./screenshot/completation_db_execute.gif)
+
+![sql跳转](./screenshot/reference_sqlmap.gif)
+
+![clientcall自动补全](./screenshot/completation_client_call.gif)
+
+## Install
+
+Preference -> Plugins -> Install plugins from disk... -> 选择ZanPlugin.jar -> restart PhpStorm
+
 ## Feature
 
 1. Db::execute("sid参数自动补全");<br>
