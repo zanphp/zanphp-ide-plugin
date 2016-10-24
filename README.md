@@ -1,18 +1,12 @@
-# Zan Plugin
+# Zan Plugin Beta
 
-version 0.1
+## Feature
 
-##
-1. SQLMap 跳转
-2. Client::Call 自动补全
-3. SQLMap sid自动补全
+1. Db::execute("sid参数自动补全");<br>
+2. Client::call("参数自动补全");<br>
+3. Db::execute("sid ctrl+mouse 自动跳转到sql文件定义位置")
 
-
-
-##
-1. 监控文件变化，实施更新自动提示
-
-## TODO:
+## TODO
 
 1. sqlmap文件名与table字段不一致情况
 2. 检查sid对应sql文件与项是否存在
