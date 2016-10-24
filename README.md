@@ -1,4 +1,6 @@
-# Zan Plugin Beta
+# Zan Plugin - Alpha
+
+`PHPStorm 2016.1.2` `PHPStorm 2016.2.1` 测试通过
 
 ## Install
 
