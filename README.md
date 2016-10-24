@@ -1,10 +1,10 @@
 # Zan Plugin Beta
 
-![sid自动补全](./screenshot/completation_db_execute.gif)
+![sid自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_db_execute.gif)
 
-![sql跳转](./screenshot/reference_sqlmap.gif)
+![sql跳转](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/reference_sqlmap.gif)
 
-![clientcall自动补全](./screenshot/completation_client_call.gif)
+![clientcall自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_client_call.gif)
 
 ## Install
 
