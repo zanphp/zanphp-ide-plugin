@@ -113,19 +113,19 @@ public class SqlMapCompletionProvider<CompletionParameters> extends CompletionPr
 //            return false;
 //        }).findFirst();
 
-        for (int i = 0; i < fields.length; i++) {
-            log.info(fields[i].getDeclaringClass().getName());
-            log.info(fields[i].getName());
-            fields[i].setAccessible(true);
-            try {
-                Object value = fields[i].get(completionResultSet);
-                if (value != null) {
-                    log.info(value.toString());
-                }
-            } catch (IllegalAccessException e) {
-                log.info(e);
-            }
-            log.info("==========================");
-        }
+//        for (int i = 0; i < fields.length; i++) {
+//            log.info(fields[i].getDeclaringClass().getName());
+//            log.info(fields[i].getName());
+//            fields[i].setAccessible(true);
+//            try {
+//                Object value = fields[i].get(completionResultSet);
+//                if (value != null) {
+//                    log.info(value.toString());
+//                }
+//            } catch (IllegalAccessException e) {
+//                log.info(e);
+//            }
+//            log.info("==========================");
+//        }
     }
 }

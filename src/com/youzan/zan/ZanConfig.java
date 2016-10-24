@@ -70,7 +70,7 @@ public class ZanConfig {
             return new SqlMapConfig();
         }
 
-        log.info(json);
+        log.debug(json);
         return new Gson().fromJson(json, SqlMapConfig.class);
     }
 
@@ -89,7 +89,7 @@ public class ZanConfig {
             return mods;
         }
 
-        log.info(json);
+        log.debug(json);
 
         // TODO 重新定义ApiConfig实体
         // TODO 配置整理逻辑修改成PHP代码

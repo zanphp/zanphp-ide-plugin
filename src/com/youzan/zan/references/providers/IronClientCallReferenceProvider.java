@@ -50,7 +50,6 @@ public class IronClientCallReferenceProvider extends PsiReferenceProvider {
             return PsiReference.EMPTY_ARRAY;
         }
 
-        log.info("className： " + className);
         if (!className.equalsIgnoreCase("Client") &&
                 !className.equalsIgnoreCase("Api_Client") &&
                 !className.equals("this")
