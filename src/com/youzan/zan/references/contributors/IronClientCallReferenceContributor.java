@@ -7,20 +7,20 @@ import com.intellij.psi.PsiReferenceRegistrar;
 import com.jetbrains.php.lang.PhpLanguage;
 import com.jetbrains.php.lang.psi.elements.StringLiteralExpression;
 import com.youzan.zan.ZanProjectComponent;
-import com.youzan.zan.references.providers.SqlMapReferenceProvider;
+import com.youzan.zan.references.providers.IronClientCallReferenceProvider;
 import org.jetbrains.annotations.NotNull;
 
-public class SqlMapReferenceContributor extends PsiReferenceContributor {
+public class IronClientCallReferenceContributor extends PsiReferenceContributor {
 
-    private static final Logger log = Logger.getInstance(SqlMapReferenceContributor.class);
+    private static final Logger log = Logger.getInstance(IronClientCallReferenceContributor.class);
 
     @Override
     public void registerReferenceProviders(@NotNull PsiReferenceRegistrar psiReferenceRegistrar) {
 
-        if (ZanProjectComponent.isEnableZan()) {
+        if (ZanProjectComponent.isEnableIron()) {
             psiReferenceRegistrar.registerReferenceProvider(
                     PlatformPatterns.psiElement(StringLiteralExpression.class).withLanguage(PhpLanguage.INSTANCE),
-                    new SqlMapReferenceProvider()
+                    new IronClientCallReferenceProvider()
             );
         }
     }

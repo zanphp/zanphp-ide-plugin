@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.youzan.zan</id>
   <name>Zan Plugin</name>
-  <version>0.1</version>
+  <version>0.1.2</version>
   <vendor email="chuxiaofeng@youzan.com" url="http://www.youzan.com">YouZan</vendor>
 
   <description><![CDATA[
@@ -9,10 +9,17 @@
   ]]></description>
 
   <change-notes><![CDATA[
-      <strong>v0.1</strong>
+      <strong>v0.1.2</strong><br>
+      1. <strong>Iron</strong> Client::call("内部调用ctrl+click跳转到api定以方法");<br>
+        <em>(1) Client::call("")</em><br>
+        <em>(2) Api_Client::call("")</em><br>
+        <em>(3) $this->call("")</em><br>
+
+      <strong>v0.1.1</strong><br>
       1. Db::execute("sid参数自动补全");<br>
       2. Client::call("参数自动补全");<br>
-      3. Db::execute("sid ctrl+mouse 自动跳转到sql文件定义位置")
+      3. Db::execute("sid ctrl+click 自动跳转到sql文件定义位置")<br>
+      <br>
     ]]>
   </change-notes>
 
@@ -33,6 +40,7 @@
     <completion.contributor language="PHP" order="FIRST" implementationClass="com.youzan.zan.completition.contributors.SqlMapCompletionContributor"/>
 
     <psi.referenceContributor language="PHP" implementation="com.youzan.zan.references.contributors.SqlMapReferenceContributor"/>
+    <psi.referenceContributor language="PHP" implementation="com.youzan.zan.references.contributors.IronClientCallReferenceContributor"/>
   </extensions>
 
   <actions>

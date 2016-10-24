@@ -9,13 +9,13 @@ import com.jetbrains.php.lang.psi.elements.MethodReference;
 import com.jetbrains.php.lang.psi.elements.ParameterList;
 import com.jetbrains.php.lang.psi.elements.PhpExpression;
 import com.jetbrains.php.lang.psi.elements.StringLiteralExpression;
-import com.youzan.zan.references.SqlMapReference;
+import com.youzan.zan.references.IronClientCallReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class SqlMapReferenceProvider extends PsiReferenceProvider {
-    private static final Logger log = Logger.getInstance(SqlMapReferenceProvider.class);
+public class IronClientCallReferenceProvider extends PsiReferenceProvider {
+    private static final Logger log = Logger.getInstance(IronClientCallReferenceProvider.class);
 
     @NotNull
     @Override
@@ -33,11 +33,10 @@ public class SqlMapReferenceProvider extends PsiReferenceProvider {
             return PsiReference.EMPTY_ARRAY;
         }
 
-        // Db::execute(parameters...)
         MethodReference methodReference = (MethodReference)parameterList.getContext();
 
         String methodName = methodReference.getName();
-        if (!Objects.equals(methodName, "execute")) {
+        if (!Objects.equals(methodName, "call")) {
             return PsiReference.EMPTY_ARRAY;
         }
 
@@ -51,7 +50,11 @@ public class SqlMapReferenceProvider extends PsiReferenceProvider {
             return PsiReference.EMPTY_ARRAY;
         }
 
-        if (!className.equalsIgnoreCase("Db")) {
+        log.info("className： " + className);
+        if (!className.equalsIgnoreCase("Client") &&
+                !className.equalsIgnoreCase("Api_Client") &&
+                !className.equals("this")
+                ) {
             return PsiReference.EMPTY_ARRAY;
         }
 
@@ -65,11 +68,11 @@ public class SqlMapReferenceProvider extends PsiReferenceProvider {
             return PsiReference.EMPTY_ARRAY;
         }
 
-        // 去除字符串类型参数引号
-        String sid = firstParameter.getText().trim();
-        sid = sid.substring(1, sid.length() - 1).trim();
+        String callPath = firstParameter.getText().trim();
+        callPath = callPath.substring(1, callPath.length() - 1).trim();
+
         return new PsiReference[] {
-                new SqlMapReference((StringLiteralExpression) psiElement, sid)
+                new IronClientCallReference((StringLiteralExpression) psiElement, callPath)
         };
     }
 }

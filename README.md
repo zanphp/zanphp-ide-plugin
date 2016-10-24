@@ -17,6 +17,13 @@ Preference -> Plugins -> Install plugins from disk... -> 选择ZanPlugin.jar -> 
 ### 3. Client::call("参数自动补全");
 ![clientcall自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_client_call.gif)
 
+#### 4. [Iron] Client::call("内部调用 ctrl+click 跳转到api定以方法");<br>
+支持以下三种形式：
+1. Client::call("")
+2. Api_Client::call("")
+3. $this->call("")
+![iron-clientcall内部调用跳转]()
+
 ## TODO
 
 1. sqlmap文件名与table字段不一致情况
