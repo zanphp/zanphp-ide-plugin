@@ -1,6 +1,10 @@
 # Zan Plugin - Alpha
 
-`PHPStorm 2016.1.2` `PHPStorm 2016.2.1` 测试通过
+`PHPStorm 2016.1.2` `PHPStorm 2016.2.1`
+
+`IntelliJ IDEA 2016.1` `IntelliJ IDEA 2016.2`
+
+测试通过
 
 ## Install
 
@@ -18,11 +22,14 @@ Preference -> Plugins -> Install plugins from disk... -> 选择ZanPlugin.jar -> 
 ![clientcall自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_client_call.gif)
 
 #### 4. [Iron] Client::call("内部调用 ctrl+click 跳转到api定以方法");<br>
+
 支持以下三种形式：
+
 1. Client::call("")
 2. Api_Client::call("")
 3. $this->call("")
-![iron-clientcall内部调用跳转]()
+
+![iron-clientcall内部调用跳转](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/iron_client_call_reference.gif)
 
 ## TODO
 
