@@ -22,6 +22,7 @@ Preference -> Plugins -> Install plugins from disk... -> 选择release/zan-ide-p
 
 1. 调试扩展最最好使用社区版本, 开源, 否则断点调试信息可能不对
 2. 将项目module改成plugin: No plugin module specified for configuration： 把项目根目录的*.iml中<module type="JAVA_MODULE" 改成<module type="PLUGIN_MODULE" />
+3. 打包 build->Prepare Plugin Module.... ,如果没有该模块, 参照2
 3. 导入com.jetbrains.php package
 
 ```
