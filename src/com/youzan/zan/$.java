@@ -1,21 +1,10 @@
 package com.youzan.zan;
 
-import com.youzan.zan.elements.ApiConfig;
-import com.youzan.zan.elements.SqlMapConfig;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
-import java.util.Map;
 
 public class $ {
-
-    // TODO only
-//    public static boolean isWin() {
-//        String OS = System.getProperty("os.name").toLowerCase();
-//        return OS.indexOf("win") == 0;
-//
-//        return System.getProperty("os.name").toLowerCase().contains("mac");
-//    }
 
     public static String exec(@NotNull final String[] cmdarray) {
         InputStream input = null;
@@ -65,13 +54,4 @@ public class $ {
         System.out.println(t);
     }
 
-    public static void main(String[] args) {
-        String path = "/Users/chuxiaofeng/yz_env/webroot/tmp/zanhttpdemo/vendor/zanphp/zan/src/Network/Common/ApiConfig.php";
-        Map<String, ApiConfig.Mod> mods = ZanConfig.parseApiConfig(path);
-        echo(mods);
-
-        path = "/Users/chuxiaofeng/yz_env/webroot/material-api";
-        SqlMapConfig sqlMapConfig = ZanConfig.parseSqlMapConfig(path);
-        echo(sqlMapConfig);
-    }
 }

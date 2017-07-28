@@ -10,15 +10,9 @@
 
   <change-notes><![CDATA[
       <strong>v0.1.2</strong><br>
-      1. <strong>Iron</strong> Client::call("内部调用ctrl+click跳转到api定以方法");<br>
-        <em>(1) Client::call("")</em><br>
-        <em>(2) Api_Client::call("")</em><br>
-        <em>(3) $this->call("")</em><br>
-
       <strong>v0.1.1</strong><br>
       1. Db::execute("sid参数自动补全");<br>
-      2. Client::call("参数自动补全");<br>
-      3. Db::execute("sid ctrl+click 自动跳转到sql文件定义位置")<br>
+      2. Db::execute("sid ctrl+click 自动跳转到sql文件定义位置")<br>
       <br>
     ]]>
   </change-notes>
@@ -26,6 +20,15 @@
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <!--<idea-version since-build="141.0"/>-->
   <idea-version since-build="117.0"/>
+  <!-- SDKs:
+     162.1889                           -> PhpStorm 2016.2.1
+    141.2462 — 141.2462  PS 9.0.2      -> 1.3.9   [ok]
+    143.382  — 143.382   PS 10.0.1     -> 1.3.9.1 [ok]
+    143.1184 — 143.1184  PS 10.0.2     -> 1.3.9.2 [ok]
+    143.1480 — *         PS 10.0.3/EAP -> 1.3.10  [ok]
+    138.2001 — 138.2001  PS 8.0.3      -> not supported anymore (PHP 7 related classes)
+  -->
+
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -36,11 +39,9 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-    <completion.contributor language="PHP" order="FIRST" implementationClass="com.youzan.zan.completition.contributors.ClientCallCompletionContributor"/>
     <completion.contributor language="PHP" order="FIRST" implementationClass="com.youzan.zan.completition.contributors.SqlMapCompletionContributor"/>
 
     <psi.referenceContributor language="PHP" implementation="com.youzan.zan.references.contributors.SqlMapReferenceContributor"/>
-    <psi.referenceContributor language="PHP" implementation="com.youzan.zan.references.contributors.IronClientCallReferenceContributor"/>
   </extensions>
 
   <actions>

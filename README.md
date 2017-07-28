@@ -8,7 +8,7 @@
 
 ## Install
 
-Preference -> Plugins -> Install plugins from disk... -> 选择ZanPlugin.jar -> restart PhpStorm
+Preference -> Plugins -> Install plugins from disk... -> 选择release/zan-ide-plugin.jar -> restart PhpStorm
 
 ## Feature
 
@@ -18,22 +18,24 @@ Preference -> Plugins -> Install plugins from disk... -> 选择ZanPlugin.jar -> 
 ### 2. Db::execute("sid ctrl+mouse 自动跳转到sql文件定义位置")
 ![sql跳转](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/reference_sqlmap.gif)
 
-### 3. Client::call("参数自动补全");
-![clientcall自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_client_call.gif)
+## 一些问题
 
-### 4. [Iron] Client::call("内部调用 ctrl+click 跳转到api定以方法");<br>
+1. 调试扩展最最好使用社区版本, 开源, 否则断点调试信息可能不对
+2. 将项目module改成plugin: No plugin module specified for configuration： 把项目根目录的*.iml中<module type="JAVA_MODULE" 改成<module type="PLUGIN_MODULE" />
+3. 导入com.jetbrains.php package
 
-支持以下三种形式：
+```
+https://confluence.jetbrains.com/display/PhpStorm/Setting-up+environment+for+PhpStorm+plugin+development
 
-1. Client::call("")
-2. Api_Client::call("")
-3. $this->call("")
-
-![iron-clientcall内部调用跳转](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/iron_client_call_reference.gif)
-
-## TODO
-
-1. sqlmap文件名与table字段不一致情况
-2. 检查sid对应sql文件与项是否存在
-3. 检测client::call配置是否存在
-4. resource/sql 文件夹内sqlmap文件反向查找使用者
+1. Open Project Structure File | Project Structure
+2. Select Libraries
+3. Press Add button
+4. Find and select php-openapi.jar and php.jar. They are located in <your_installation_of_PhpStorm/plugins/php/lib.
+5. Agree to add the libraries to your Module
+6. Open Modules | Dependencies and change Scope to Provided. This step is necessary because otherwise ClassCastException will be thrown because two instances of the library will be loaded via different class loaders
+7. Adding dependencies to plugin.xml
+    1. Open plugin.xml in the directory META-INF
+    2. Add two <depends> items to plugin.xml:
+        - <depends>com.jetbrains.php</depends>
+        - <depends>com.intellij.modules.platform</depends>
+```

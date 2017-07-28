@@ -13,12 +13,10 @@ public class ZanProjectComponent implements ProjectComponent {
 
     public ZanProjectComponent(Project project) {
         ZanProjectComponent.project = project;
-        // properties = PropertiesComponent.getInstance(project);
     }
 
     public static boolean isEnableZan() {
         if (isEnableZan == null) {
-            // TODO
             isEnableZan = true;
         }
         return isEnableZan;
@@ -34,12 +32,10 @@ public class ZanProjectComponent implements ProjectComponent {
 
     @Override
     public void initComponent() {
-        // TODO: insert component initialization logic here
     }
 
     @Override
     public void disposeComponent() {
-        // TODO: insert component disposal logic here
     }
 
     @Override
