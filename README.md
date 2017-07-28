@@ -13,10 +13,10 @@ Preference -> Plugins -> Install plugins from disk... -> 选择release/zan-ide-p
 ## Feature
 
 ### 1. Db::execute("sid参数自动补全");
-![sid自动补全](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/completation_db_execute.gif)
+![sid自动补全](https://cdn.rawgit.com/zanphp/zanphp-ide-plugin/ddfb4f47/screenshot/completation_db_execute.gif)
 
 ### 2. Db::execute("sid ctrl+mouse 自动跳转到sql文件定义位置")
-![sql跳转](http://gitlab.qima-inc.com/php-lib/zan-ide-plugin/raw/master/screenshot/reference_sqlmap.gif)
+![sql跳转](https://cdn.rawgit.com/zanphp/zanphp-ide-plugin/ddfb4f47/screenshot/reference_sqlmap.gif)
 
 ## 一些问题
 
